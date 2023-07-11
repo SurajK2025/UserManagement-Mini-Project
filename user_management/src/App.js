@@ -4,6 +4,7 @@ import SignupPage from "./components/signupPage";
 import UserDashboard from "./components/userDashboard";
 import AdminDashboard from "./components/adminDashboard";
 import './App.css';
+import UpdateProfile from "./components/updateProfile";
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
         <Route exact path="/signup" element={<SignupPage/>}></Route>
         <Route exact path="/userDashboard" element={<UserDashboard/>}></Route>
         <Route exact path="/adminDashboard" element={<AdminDashboard/>}></Route>
+        <Route exact path="/updateProfile" element={<UpdateProfile/>}></Route>
       </Routes>
     </BrowserRouter>
   );

@@ -14,6 +14,7 @@ export default function UserDashboard() {
         <div id='userListTable' class='main'>
             <div className='logoutBtn'>
                 <button onClick={() => { navigate("/login"); }}>Logout</button>
+                <button onClick={() => { navigate("/updateProfile"); }}>Update Profile</button>
             </div>
             <h3>User Profile</h3>
             <table>

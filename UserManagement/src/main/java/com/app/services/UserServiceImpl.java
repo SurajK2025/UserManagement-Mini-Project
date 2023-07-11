@@ -106,4 +106,33 @@ public class UserServiceImpl implements UserService {
 		
 		return returnDto;
 	}
+
+	@Override
+	public SignupDto updateUser(SignupDto signupDto) {
+		SignupDto returnDto = new SignupDto();
+		
+		try {
+			User user = userRepository.findById(signupDto.getUserId()).orElseThrow();
+			
+			user.setUserName(signupDto.getUserName());
+			user.setFirstName(signupDto.getFirstName());
+			user.setLastName(signupDto.getLastName());
+			user.setPassword(signupDto.getPassword());
+			user.setDob(signupDto.getDob());
+			user.setAddress(signupDto.getAddress());
+			user.setPhone(signupDto.getPhone());
+			
+			this.userRepository.save(user);
+			
+			returnDto = modelMapper.map(user, SignupDto.class);
+			returnDto.setResponseCode("200");
+			returnDto.setResponseMsg("User updated successfully.");
+		}
+		catch(Exception e) {
+			returnDto.setResponseCode("501");
+			returnDto.setResponseMsg("Invalid userid.");
+		}
+		
+		return returnDto;
+	}
 }

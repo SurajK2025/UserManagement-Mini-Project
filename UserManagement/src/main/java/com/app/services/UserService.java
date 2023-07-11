@@ -15,4 +15,6 @@ public interface UserService {
 
 	SignupDto validateUser(Integer userid);
 
+	SignupDto updateUser(SignupDto signupDto);
+
 }

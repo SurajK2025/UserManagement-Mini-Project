@@ -27,6 +27,11 @@ public class UserController {
 		return userService.getAllUsers();
 	}
 	
+	@PostMapping("/update")
+	public SignupDto updateUser(@RequestBody SignupDto signupDto) {
+		return userService.updateUser(signupDto);
+	}
+	
 	@PostMapping("/signup")
 	public SignupDto signupUser(@RequestBody SignupDto signupDto) {
 		return userService.signupUser(signupDto);

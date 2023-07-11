@@ -24,7 +24,6 @@ export default function AdminDashboard(props) {
                 <td>{obj.phone}</td>
                 <td>{obj.status}</td>
                 <td><button onClick={() => {
-                    //console.log(obj.userId);
                     axios.post(`http://localhost:8080/user/validateUser`, obj)
                         .then(response => {
                             alert(response.data.responseMsg);
